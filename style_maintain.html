@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>样式维护</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f5f5f5;
+  }
+  .content {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: #fff;
+  }
+  .table-container {
+    overflow-x: auto;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }  
+  .container {
+    width: 80%;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  h2 {
+    margin-bottom: 20px;
+  }
+  .step-indicator {
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  .button-group {
+    display: flex;
+    justify-content: center; /* 按钮居中对齐 */
+    margin-top: 20px;
+  }
+  button {
+    padding: 10px 20px;
+    margin: 0 10px; /* 按钮之间增加间距 */
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  button:hover {
+    opacity: 0.8;
+  }
+  .next-button {
+    background-color: #007bff;
+    color: white;
+  }
+  .cancel-button {
+    background-color: #ff4500;
+    color: white;
+  }
+  .action-button {
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  .disable-button {
+    background-color: #ff4500;
+  }  
+  .add-button-container {
+    margin-bottom: 20px; /* 增加与表格的间距 */
+    text-align: left; /* 靠左对齐 */
+  }
+</style>
+</head>
+<body>
+<div id="step1" class="container">
+  <h2>样式维护</h2>
+  <div class="add-button-container">
+    <button type="button" class="action-button">新增</button>
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>样式名称</th>
+        <th>状态</th>
+        <th>样式简介</th>
+        <th>添加时间</th>
+        <th>操作</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>V1活泼明亮</td>
+        <td>启用</td>
+        <td>交易大赛活泼明亮的风格</td>
+        <td>2024-06-13</td>
+        <td>
+          <button class="action-button">启用</button>
+          <button class="action-button disable-button">禁用</button>
+          <button class="action-button" onclick="window.location.href='activity_add.html'">编辑</button>
+        </td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>V2商务沉稳</td>
+        <td>启用</td>
+        <td>交易大赛商务沉稳的风格</td>
+        <td>2024-06-13</td>
+        <td>
+          <button class="action-button">启用</button>
+          <button class="action-button disable-button">禁用</button>
+          <button class="action-button" onclick="window.location.href='activity_add.html'">编辑</button>
+        </td>
+      </tr>
+
+      <!-- More rows can be added here -->
+    </tbody>
+  </table>
+  <div class="button-group">
+    <button type="button" class="cancel-button" onclick="window.location.href='model_index.html'">取消</button>
+    <button type="button" class="next-button" onclick="window.location.href='model_index.html'">完成</button>
+  </div>
+</div>
+</body>
+</html>

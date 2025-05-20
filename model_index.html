@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Template Management</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  .menu {
+    width: 200px;
+    background-color: #f4f4f4;
+    padding: 10px;
+    overflow: auto;
+  }
+  .menu-item {
+    padding: 10px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  .menu-item.selected {
+    background-color: #ddd;
+  }
+  .content {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: #fff;
+  }
+  .table-container {
+    overflow-x: auto;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  .pagination {
+    margin-top: 20px;
+    text-align: center;
+  }
+  .pagination button {
+    padding: 5px 10px;
+    margin-right: 5px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  .action-button {
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+  cursor: pointer;
+  }
+  .disable-button {
+    background-color: #ff4500;
+  }
+</style>
+</head>
+<body>
+<div class="menu">
+  <div class="menu-item">活动中心</div>
+    <ul class ="submenu">
+        <li 
+			<button class="menu-item selected">模板管理</button>
+		</li>
+        <li 
+		   <button class="menu-item" onclick="window.location.href='activity_index.html'">活动管理</button>
+		</li>
+    </ul>
+   </div>
+</div>
+<div class="content">
+  <div class="query-section">
+    <input type="text" class="query-input" placeholder="模板名称">
+    <input type="text" class="query-input" placeholder="模板状态">
+    <button class="query-button">查询</button>
+    <button class="query-button action-button" onclick="window.location.href='model_add.html'">新增</button>
+ 
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>模板名称</th>
+        <th>状态</th>
+        <th>简介</th>
+        <th>添加时间</th>
+        <th>操作</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>模板A</td>
+        <td>启用</td>
+        <td>简介A的简介</td>
+        <td>2024-06-13</td>
+        <td>
+          <button class="action-button">启用</button>
+          <button class="action-button disable-button">禁用</button>
+		  <button class="action-button "  onclick="window.location.href='style_maintain.html' ">样式维护</button>
+          <button class="action-button" onclick="window.location.href='model_add.html'" >编辑</button>
+        </td>
+      </tr>
+      <!-- More rows can be added here -->
+    </tbody>
+  </table>
+  <div class="pagination">
+    <button class="pagination button">上一页</button>
+    <button class="pagination button">下一页</button>
+  </div>
+</div>
+</body>
+</html>

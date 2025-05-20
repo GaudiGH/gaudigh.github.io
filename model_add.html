@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>新增模板</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f5f5f5;
+  }
+
+  form {
+    width: 80%;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  label {
+    display: block;
+    margin: 10px 0;
+  }
+  .input-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+  }
+  textarea {
+    resize: vertical;
+  }
+  .button-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  button {
+    flex: 1;
+    padding: 10px;
+    margin: 0 5px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  button:hover {
+    opacity: 0.8;
+  }
+  .submit-button {
+    background-color: #007bff;
+    color: white;
+  }
+  .cancel-button {
+    background-color: #ff4500;
+    color: white;
+  }
+</style>
+</head>
+<body>
+<form>
+  <h2>新增模板</h2>
+  <div class="input-group">
+    <label for="templateName">模板名称:</label>
+    <input type="text" id="templateName" name="templateName" placeholder="请输入模板名称" required>
+  </div>
+  <div class="input-group">
+    <label for="templateDesc">模板介绍:</label>
+    <textarea id="templateDesc" name="templateDesc" rows="4" placeholder="请输入模板介绍" required></textarea>
+  </div>
+  <div class="input-group">
+    <label for="registrationPage">报名页:</label>
+    <textarea id="registrationPage" name="registrationPage" rows="2" placeholder="请输入报名页内容"></textarea>
+  </div>
+  <div class="input-group">
+    <label for="landingPage" > * 落地页:</label>
+    <textarea id="landingPage" name="landingPage" rows="2" placeholder="请输入落地页内容"></textarea>
+  </div>
+  <div class="input-group">
+    <label for="endingPage">结束页:</label>
+    <textarea id="endingPage" name="endingPage" rows="2" placeholder="请输入结束页内容"></textarea>
+  </div>
+  <div class="input-group">
+    <label for="rewardPage">奖励页:</label>
+    <textarea id="rewardPage" name="rewardPage" rows="2" placeholder="请输入奖励页内容"></textarea>
+  </div>
+  <div class="input-group">
+    <label for="rankingPage">排行榜页:</label>
+    <textarea id="rankingPage" name="rankingPage" rows="2" placeholder="请输入排行榜页内容"></textarea>
+  </div>
+  <div class="input-group">
+    <label for="transactionPage">交易页信息:</label>
+    <textarea id="transactionPage" name="transactionPage" rows="2" placeholder="请输入交易页信息"></textarea>
+  </div>
+  <div class="button-group">
+    <button type="button" class="cancel-button" onclick="window.location.href='model_index.html'">取消</button>
+    <button type="submit" class="submit-button" onclick="window.location.href='model_index.html'">提交</button>
+  </div>
+</form>
+</body>
+</html>
