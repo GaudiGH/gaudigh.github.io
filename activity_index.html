@@ -85,8 +85,9 @@
     <input type="text" class="query-input" placeholder="活动名称">
     <input type="text" class="query-input" placeholder="模板状态">
 	<input type="text" class="query-input" placeholder="模板名称">
+	<input type="text" class="query-input" placeholder="活动时间">
     <button class="query-button">查询</button>
-    <button class="query-button action-button" onclick="window.location.href='activity_add.html'">新增</button>
+    <button class="query-button action-button" onclick="window.location.href='activity_add_trade.html'">新增</button>
  
   </div>
   <table>
@@ -102,7 +103,9 @@
         <th>添加时间</th>
 		<th>最后修改时间</th>
         <th>操作人员</th>
-		<th>操作</th>
+		<th>活动前</th>
+		<th>活动中</th>
+		<th>活动后</th>
       </tr>
     </thead>
     <tbody>
@@ -118,13 +121,22 @@
         <td>2024-06-13</td>
 		<td>888 Peter </td>
         <td>
-          <button class="action-button">启用</button>
-          <button class="action-button disable-button">禁用</button>
-          <button class="action-button" onclick="window.location.href='activity_add.html'" >编辑</button>
+          <button class="action-button" onclick="window.location.href='activity_add_trade.html'"">编辑</button>
+          <button class="action-button">复制</button>
+          <button class="action-button"  >删除</button>
+        </td>
+        <td>
+          <button class="action-button" onclick="window.location.href='activity_trade_apply.html'">报名</button>
+          <button class="action-button " onclick="window.location.href='activity_trade_participate.html'">参与</button>
+          <button class="action-button" onclick="window.location.href='activity_trade_ranking.html'" >排行榜</button>
+        </td>
+        <td>
+		   <button class="action-button" onclick="window.location.href='activity_trade_result.html'">获奖名单</button>
+          <button class="action-button" onclick="window.location.href='activity_trade_evaluation.html'">活动评价</button>
         </td>
       </tr>
       <tr>
-        <td>1</td>
+        <td>2</td>
         <td>许愿池第8期</td>
         <td>启用</td>
 		<td>发帖样式</td>
@@ -135,9 +147,15 @@
         <td>2024-06-13</td>
 		<td>888 Peter </td>
         <td>
-          <button class="action-button">启用</button>
-          <button class="action-button disable-button">禁用</button>
-          <button class="action-button" onclick="window.location.href='activity_add_post.html'" >编辑</button>
+          <button class="action-button" onclick="window.location.href='activity_add_post.html'">编辑</button>
+          <button class="action-button" >复制</button>
+          <button class="action-button"  >删除</button>
+        </td>
+        <td>
+          <button class="action-button">设置获奖名单</button>
+        </td>
+        <td>
+          <button class="action-button" onclick="window.location.href='activity_post_evaluation.html'">活动评价</button>
         </td>
       </tr>	  
       <!-- More rows can be added here -->

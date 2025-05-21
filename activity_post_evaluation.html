@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>发帖活动后评价</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 100vh;
+    background-color: #f5f5f5;
+    overflow-y: auto;
+  }
+  .menu {
+    width: 200px;
+    background-color: #f4f4f4;
+    padding: 10px;
+    overflow: auto;
+  }
+  .menu-item {
+    padding: 10px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  .menu-item.selected {
+    background-color: #ddd;
+  }
+  .content {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: #fff;
+  }
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    margin-top: 20px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  th {
+    background-color: #f2f2f2;
+  }
+  .button-group {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  button:hover {
+    opacity: 0.8;
+  }
+  .next-button {
+    background-color: #007bff;
+    color: white;
+  }
+  .cancel-button {
+    background-color: #ff4500;
+    color: white;
+  }
+  .chart-container {
+    width: 100%;
+    padding: 20px;
+  }
+</style>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<div class="menu">
+  <div class="menu-item">活動中心</div>
+  <ul class="submenu">
+    <li><button class="menu-item" onclick="window.location.href='model_index.html'">模板管理</button></li>
+    <li><button class="menu-item selected" onclick="window.location.href='activity_index.html'">活動管理</button></li>
+  </ul>
+</div>
+<div class="content">
+  <div class="container">
+    <h2>发帖活动-活动后评价</h2>
+    <div class="query-section">
+      <label for="startDate">开始日期</label>
+      <input type="date" id="startDate" name="startDate">
+      <label for="endDate">结束日期</label>
+      <input type="date" id="endDate" name="endDate">
+      <div>  
+        <button type="button" class="next-button" onclick="queryData()">查询</button>
+        <button type="button" class="next-button">导出</button>
+      </div>
+    </div>
+    <div class="chart-container">
+      <canvas id="myChart"></canvas>
+    </div>
+  </div>
+</div>
+<script>
+  var ctx = document.getElementById('myChart').getContext('2d');
+  var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['1.1','1.2','1.3', '1.4', '1.5', '1.6'],
+      datasets: [{
+        label: 'PV',
+        data: [1000, 24000, 520, 320, 154200, 20323],
+        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+        borderColor: 'rgba(75, 192, 192, 1)',
+        borderWidth: 1
+      }, {
+        label: 'UV',
+        data: [150609, 32000, 5020, 3400, 253200, 364234],
+        backgroundColor: 'rgba(153, 102, 255, 0.2)',
+        borderColor: 'rgba(153, 102, 255, 1)',
+        borderWidth: 1
+      }, {
+        label: '报名用户数量',
+        data: [150609, 32000, 5030, 3040, 253200, 26234],
+        backgroundColor: 'rgba(255, 99, 132, 0.2)',
+        borderColor: 'rgba(255, 99, 132, 1)',
+        borderWidth: 1
+      }, {
+        label: '参加用户数量',
+        data: [150609, 32000, 500, 3040, 253200, 64234],
+        backgroundColor: 'rgba(255, 206, 86, 0.2)',
+        borderColor: 'rgba(255, 206, 86, 1)',
+        borderWidth: 1
+      }, {
+        label: '交易手数',
+        data: [150609, 32000, 1500, 3040, 253200, 194234],
+        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+        borderColor: 'rgba(54, 162, 235, 1)',
+        borderWidth: 1
+      }, {
+        label: '当天期初净值',
+        data: [150609, 32000, 500, 1340, 253200, 264234],
+        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+        borderColor: 'rgba(75, 192, 192, 1)',
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        yAxes: [{
+          ticks: {
+            beginAtZero: true
+          }
+        }]
+      }
+    }
+  });
+
+  function queryData() {
+    const startDate = document.getElementById('startDate').value;
+    const endDate = document.getElementById('endDate').value;
+    if (startDate && endDate) {
+      alert('查询日期区间: ' + startDate + ' 至 ' + endDate);
+      // 这里可以添加实际的查询逻辑
+    } else {
+      alert('请选择开始日期和结束日期');
+    }
+  }
+</script>
+</body>
+</html>

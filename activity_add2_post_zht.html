@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>活动维护</title>
+<title>活動維護</title>
 <style>
   body {
     font-family: Arial, sans-serif;
@@ -12,19 +12,19 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start; /* 确保内容从顶部开始 */
+    justify-content: flex-start; /* 確保內容從頂部開始 */
     height: 100vh;
     background-color: #f5f5f5;
-    overflow-y: auto; /* 允许垂直滚动 */
+    overflow-y: auto; /* 允許垂直滾動 */
   }
   .container {
     width: 80%;
     padding: 20px;
     background-color: #fff;
-    border-radius: 5px;
+    border-radius:5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: left; /* 字段名靠左显示 */
-    margin-top: 0; /* 确保容器顶部对齐 */
+    text-align: left; /* 字段名靠左顯示 */
+    margin-top: 0; /* 確保容器頂部對齊 */
   }
   h2 {
     margin-bottom: 20px;
@@ -36,12 +36,12 @@
   }
   .button-group {
     display: flex;
-    justify-content: center; /* 按钮居中对齐 */
+    justify-content: center; /* 按鈕居中對齊 */
     margin-top: 20px;
   }
   button {
     padding: 10px 20px;
-    margin: 0 10px; /* 按钮之间增加间距 */
+    margin: 0 10px; /* 按鈕之間增加間距 */
     border: none;
     border-radius: 3px;
     cursor: pointer;
@@ -65,7 +65,7 @@
   label {
     display: block;
     margin-bottom: 5px;
-    text-align: left; /* 字段名靠左显示 */
+    text-align: left; /* 字段名靠左顯示 */
   }
   input[type="file"] {
     display: block;
@@ -92,102 +92,103 @@
 <body>
 <div id="step1" class="container">
    <h2>
-   <span> 步骤 1: 选择模板&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>  
-   <span style="color: red;">步骤 2: 填写通用活动参数&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>  
-   <span> 步骤 3: 填写活动特有参数</span>  
+   <span>步驟 1：選擇範板&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>  
+   <span style="color: red;">步驟 2：填寫通用活動參數&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>  
+   <span>步驟 3：填寫活動特有參數</span>  
    </h2>
    
     <div>
-    <label for="templateSelect">选择当前语言:(支持多语言的会清空，修改非语言配置的参数，活动内同步生效)</label>
+    <label for="templateSelect">選擇當前語言:(支持多语言的会清空，修改非语言配置的参数，活动内同步生效)</label>
 	  <select id="langSelect" onchange="handleSelectChange()">
-		<option value="activity_add2_post.html">简体</option>
-		<option value="activity_add2_post_zht.html">繁体</option>
+	    <option value="activity_add2_post.html">请选择</option>
+		<option value="activity_add2_post.html">簡體</option>
+		<option value="activity_add2_post_zht.html">繁體</option>
 		<option value="activity_add2_post_en.html">英文</option>
 	  </select>
 	</div>
    <form>
     <div class="form-group">
-      <label for="activityName">活动名称:</label>
-      <input type="text" id="activityName" name="activityName" placeholder="请输入活动名称" required>
+      <label for="activityName">活動名稱:</label>
+      <input type="text" id="activityName" name="activityName" placeholder="請輸入活動名稱" required>
     </div>
     <div class="form-group">
-      <label for="activityTitle">活动标题:</label>
-      <input type="text" id="activityTitle" name="activityTitle" placeholder="请输入活动标题">
+      <label for="activityTitle">活動標題:(多语言)</label>
+      <input type="text" id="activityTitle" name="activityTitle" placeholder="請輸入活動標題">
     </div>
     <div class="form-group">
-      <label for="activityStartDate">活动的开始时间:</label>
+      <label for="activityStartDate">活動的開始時間:</label>
       <input type="datetime-local" id="activityStartDate" name="activityStartDate" required>
     </div>
     <div class="form-group">
-      <label for="activityEndDate">活动的结束时间:</label>
+      <label for="activityEndDate">活動的結束時間:</label>
       <input type="datetime-local" id="activityEndDate" name="activityEndDate" required>
     </div>
     <div class="form-group">
-      <label for="activityStatus">活动状态:</label>
+      <label for="activityStatus">活動狀態:</label>
       <select id="activityStatus" name="activityStatus" required>
-        <option value="enabled">启用</option>
+        <option value="enabled">啟用</option>
         <option value="disabled">禁用</option>
       </select>
     </div>
     <div class="form-group">
-      <label for="isRegistrationRequired">是否报名:</label>
+      <label for="isRegistrationRequired">是否報名:</label>
       <select id="isRegistrationRequired" name="isRegistrationRequired" required>
         <option value="yes">是</option>
         <option value="no">否</option>
       </select>
     </div>
     <div class="form-group">
-      <label for="registrationStartDate">活动报名开始时间:</label>
+      <label for="registrationStartDate">活動報名開始時間:</label>
       <input type="datetime-local" id="registrationStartDate" name="registrationStartDate">
     </div>
     <div class="form-group">
-      <label for="registrationEndDate">活动报名结束时间:</label>
+      <label for="registrationEndDate">活動報名結束時間:</label>
       <input type="datetime-local" id="registrationEndDate" name="registrationEndDate">
     </div>
     <div class="form-group">
-      <label for="relatedActivity">关联活动:</label>
+      <label for="relatedActivity">關聯活動:</label>
       <select id="activitySelect" name="templateSelect" required>
-      <option value="">请选择样式</option>
-      <option value="template1">许愿池-交易大赛8期</option>
-      <option value="template2">比赛拉拉队-交易大赛8期</option>
-	  <option value="template2">比赛加油站-交易大赛8期</option>
-	  <option value="template2">比赛咖啡厅-交易大赛8期</option>
-	  <option value="template2">创造赢大奖-交易大赛8期</option>
+        <option value="">請選擇樣式</option>
+        <option value="template1">許願池-交易大賽8期</option>
+        <option value="template2">比賽拉拉隊-交易大賽8期</option>
+	  <option value="template2">比賽加油站-交易大賽8期</option>
+	  <option value="template2">比賽咖啡廳-交易大賽8期</option>
+	  <option value="template2">創造贏贏大奬-交易大賽8期</option>
     </select>
     </div>
     <div class="form-group">
-      <label for="relatedTask">关联任务:(最多选择3个)</label>
+      <label for="relatedTask">關聯任務：(最多選擇3個)</label>
       <select id="taskSelect" name="templateSelect" required>
-      <option value="">请选择样式</option>
-      <option value="template1">每日签到</option>
-      <option value="template2">浏览帖子-每日任务</option>
-	  <option value="template2">发帖-每日任务</option>
-	  <option value="template2">点赞-每日任务</option>
-	  <option value="template2">发表评论-每日任务</option>
-	  <option value="template2">发帖-每日任务</option>
-	  <option value="template2">转发快讯到社区-每日任务</option>
-	  <option value="template2">发布晒单-每日任务</option>
+        <option value="">請選擇樣式</option>
+        <option value="template1">每日簽名</option>
+        <option value="template2">瀏覽貼-每日任務</option>
+	  <option value="template2">發帖-每日任務</option>
+	  <option value="template2">點贊-每日任務</option>
+	  <option value="template2">發表評論-每日任務</option>
+	  <option value="template2">發帖-每日任務</option>
+	  <option value="template2">轉轉快訊到社區-每日任務</option>
+	  <option value="template2">發布曬單-每日任務</option>
 	  </select>
     </div>
     <div class="form-group">
-      <label for="activityDescription">活动简介:</label>
-      <textarea id="activityDescription" name="activityDescription" placeholder="请输入活动简介"></textarea>
+      <label for="activityDescription">活動簡介:(多语言)</label>
+      <textarea id="activityDescription" name="activityDescription" placeholder="請輸入活動簡介"></textarea>
     </div>
     <div class="form-group">
-      <label for="activityRules">活动规则:</label>
-      <textarea id="activityRules" name="activityRules" placeholder="请输入活动规则"></textarea>
+      <label for="activityRules">活動規則:(多语言)</label>
+      <textarea id="activityRules" name="activityRules" placeholder="請輸入活動規則"></textarea>
     </div>
     <div class="form-group">
-      <label for="participationMethod">参赛方式:</label>
-      <textarea id="participationMethod" name="participationMethod" placeholder="请输入参赛方式"></textarea>
+      <label for="participationMethod">參加方式:(多语言)</label>
+      <textarea id="participationMethod" name="participationMethod" placeholder="請輸入參加方式"></textarea>
     </div>
     <div class="form-group">
-      <label for="activityDetails">活动详情:</label>
-      <textarea id="activityDetails" name="activityDetails" placeholder="请输入活动详情"></textarea>
+      <label for="activityDetails">活動詳情:(多语言)</label>
+      <textarea id="activityDetails" name="activityDetails" placeholder="請輸入活動詳情"></textarea>
     </div>
     <div class="form-group">
-      <label for="disclaimer">免责声明:</label>
-      <textarea id="disclaimer" name="disclaimer" placeholder="请输入免责声明"></textarea>
+      <label for="disclaimer">免責聲明:(多语言)</label>
+      <textarea id="disclaimer" name="disclaimer" placeholder="請輸入免責聲明"></textarea>
     </div>
 
     <div class="button-group">
