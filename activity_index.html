@@ -65,6 +65,10 @@
   .disable-button {
     background-color: #ff4500;
   }
+ .operation-zone {
+    margin-top: 20px;
+	margin-bottom: 20px;
+  }
 </style>
 </head>
 <body>
@@ -86,13 +90,20 @@
     <input type="text" class="query-input" placeholder="模板状态">
 	<input type="text" class="query-input" placeholder="模板名称">
 	<input type="text" class="query-input" placeholder="活动时间">
+  </div>
+  <div class="operation-zone" >
     <button class="query-button">查询</button>
     <button class="query-button action-button" onclick="window.location.href='activity_add_trade.html'">新增</button>
+    <button class="query-button action-button" onclick="window.location.href='activity_add_trade.html'"> 上架 </button>
+    <button class="query-button action-button" onclick="window.location.href='activity_add_trade.html'"> 下架</button>
+    <button class="query-button action-button" onclick="window.location.href='activity_add_trade.html'"> 开始 </button>
+    <button class="query-button action-button" onclick="window.location.href='activity_add_trade.html'"> 结束</button>
  
   </div>
   <table>
     <thead>
       <tr>
+		<th><input type="checkbox" id="choose" name="filter" value="" ></th>
         <th>ID</th>
         <th>活动名称</th>
         <th>状态</th>
@@ -110,6 +121,7 @@
     </thead>
     <tbody>
       <tr>
+	    <td><input type="checkbox" id="choose" name="filter" value="" ></td>
         <td>1</td>
         <td>交易大赛第8期</td>
         <td>启用</td>
@@ -128,14 +140,15 @@
         <td>
           <button class="action-button" onclick="window.location.href='activity_trade_apply.html'">报名</button>
           <button class="action-button " onclick="window.location.href='activity_trade_participate.html'">参与</button>
-          <button class="action-button" onclick="window.location.href='activity_trade_ranking.html'" >排行榜</button>
-        </td>
+          <button class="action-button" onclick="window.location.href='activity_trade_ranking.html'" >每日统计</button>
+        </td>	
         <td>
-		   <button class="action-button" onclick="window.location.href='activity_trade_result.html'">获奖名单</button>
+		   <button class="action-button" onclick="window.location.href='activity_trade_result.html'">排行榜</button>
           <button class="action-button" onclick="window.location.href='activity_trade_evaluation.html'">活动评价</button>
         </td>
       </tr>
       <tr>
+	    <td><input type="checkbox" id="choose" name="filter" value="" ></td>
         <td>2</td>
         <td>许愿池第8期</td>
         <td>启用</td>
