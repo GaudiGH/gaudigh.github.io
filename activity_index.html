@@ -87,17 +87,17 @@
 <div class="content">
   <div class="query-section">
     <input type="text" class="query-input" placeholder="活动名称">
-    <input type="text" class="query-input" placeholder="模板状态">
+    <input type="text" class="query-input" placeholder="活动状态">
 	<input type="text" class="query-input" placeholder="模板名称">
-	<input type="text" class="query-input" placeholder="活动时间">
+	<input type="text" class="query-input" placeholder="活动开始时间">
   </div>
   <div class="operation-zone" >
-    <button class="query-button">查询</button>
+    <button class="query-button action-button">查询</button>
+    <button class="query-button action-button" > 上架 </button>
+    <button class="query-button action-button" > 下架</button>
     <button class="query-button action-button" onclick="window.location.href='activity_add_trade.html'">新增</button>
-    <button class="query-button action-button" onclick="window.location.href='activity_add_trade.html'"> 上架 </button>
-    <button class="query-button action-button" onclick="window.location.href='activity_add_trade.html'"> 下架</button>
-    <button class="query-button action-button" onclick="window.location.href='activity_add_trade.html'"> 开始 </button>
-    <button class="query-button action-button" onclick="window.location.href='activity_add_trade.html'"> 结束</button>
+    <button class="query-button action-button" > 开始 </button>
+    <button class="query-button action-button" > 结束</button>
  
   </div>
   <table>
@@ -106,7 +106,8 @@
 		<th><input type="checkbox" id="choose" name="filter" value="" ></th>
         <th>ID</th>
         <th>活动名称</th>
-        <th>状态</th>
+		<th>上架状态</th>
+        <th>活动状态</th>
 		<th>活动模板</th>
         <th>活动语言</th>
 		<th>活动开始时间</th>
@@ -124,26 +125,28 @@
 	    <td><input type="checkbox" id="choose" name="filter" value="" ></td>
         <td>1</td>
         <td>交易大赛第8期</td>
-        <td>启用</td>
+		<td>上架</td>
+        <td>进行中</td>
 		<td>交易大赛</td>
 		<td>中文</td>
-		<td>2024-06-13</td>
-		<td>2024-06-13</td>
-		<td>2024-06-13</td>
-        <td>2024-06-13</td>
+		<td>2024-06-13 12:12:12</td>
+		<td>2024-06-13 12:12:12</td>
+		<td>2024-06-13 12:12:12</td>
+        <td>2024-06-13 12:12:12</td>
 		<td>888 Peter </td>
         <td>
-          <button class="action-button" onclick="window.location.href='activity_add_trade.html'"">编辑</button>
+          <button class="action-button" onclick="window.location.href='activity_add_trade.html'">编辑</button>		  
           <button class="action-button">复制</button>
           <button class="action-button"  >删除</button>
+		  <button class="action-button" onclick="window.location.href='activity_preview.html'" >预览</button>
         </td>
         <td>
-          <button class="action-button" onclick="window.location.href='activity_trade_apply.html'">报名</button>
-          <button class="action-button " onclick="window.location.href='activity_trade_participate.html'">参与</button>
-          <button class="action-button" onclick="window.location.href='activity_trade_ranking.html'" >每日统计</button>
+          <button class="action-button" onclick="window.location.href='activity_trade_apply.html'">活动参与</button>
+          <button class="action-button" onclick="window.location.href='activity_trade_statictis.html'" >每日统计</button>
+		   
         </td>	
         <td>
-		   <button class="action-button" onclick="window.location.href='activity_trade_result.html'">排行榜</button>
+		<button class="action-button" onclick="window.location.href='activity_trade_ranking.html'">排行榜</button>
           <button class="action-button" onclick="window.location.href='activity_trade_evaluation.html'">活动评价</button>
         </td>
       </tr>
@@ -151,13 +154,14 @@
 	    <td><input type="checkbox" id="choose" name="filter" value="" ></td>
         <td>2</td>
         <td>许愿池第8期</td>
-        <td>启用</td>
+		<td>下架</td>
+        <td>已结束</td>
 		<td>发帖样式</td>
 		<td>中文、英文</td>
-		<td>2024-06-13</td>
-		<td>2024-06-13</td>
-		<td>2024-06-13</td>
-        <td>2024-06-13</td>
+		<td>2024-06-13 12:12:12</td>
+		<td>2024-06-13 12:12:12</td>
+		<td>2024-06-13 12:12:12</td>
+        <td>2024-06-13 12:12:12</td>
 		<td>888 Peter </td>
         <td>
           <button class="action-button" onclick="window.location.href='activity_add_post.html'">编辑</button>
@@ -171,7 +175,29 @@
           <button class="action-button" onclick="window.location.href='activity_post_evaluation.html'">活动评价</button>
         </td>
       </tr>	  
-      <!-- More rows can be added here -->
+      <tr>
+	    <td><input type="checkbox" id="choose" name="filter" value="" ></td>
+        <td>3</td>
+        <td>多语言样例</td>
+		<td>上架</td>
+        <td>未开始</td>
+		<td>发帖样式</td>
+		<td>中文、英文</td>
+		<td></td>
+		<td></td>
+		<td></td>
+        <td></td>
+		<td></td>
+        <td>
+          <button class="action-button" onclick="window.location.href='activity_add_mutillang.html'">编辑</button>
+          <button class="action-button" >复制</button>
+          <button class="action-button"  >删除</button>
+        </td>
+        <td>
+        </td>
+        <td>
+        </td>
+      </tr>	  	  	  
     </tbody>
   </table>
   <div class="pagination">

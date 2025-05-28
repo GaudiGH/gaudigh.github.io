@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>交易大赛排行榜</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  .menu {
+    width: 200px;
+    background-color: #f4f4f4;
+    padding: 10px;
+    overflow: auto;
+  }
+  .menu-item {
+    padding: 10px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  .menu-item.selected {
+    background-color: #ddd;
+  }
+  .content {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: #fff;
+  }
+  .table-container {
+    overflow-x: auto;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  th {
+    background-color: #f2f2f2;
+  }
+  .button-group {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  button:hover {
+    opacity: 0.8;
+  }
+  .next-button {
+    background-color: #007bff;
+    color: white;
+  }
+  .cancel-button {
+    background-color: #ff4500;
+    color: white;
+  }
+</style>
+</head>
+<body>
+<div class="menu">
+  <div class="menu-item">活動中心</div>
+  <ul class="submenu">
+    <li><button class="menu-item" onclick="window.location.href='model_index.html'">模板管理</button></li>
+    <li><button class="menu-item selected" onclick="window.location.href='activity_index.html'">活動管理</button></li>
+  </ul>
+</div>
+<div class="content">
+  <div class="container">
+    <h2>交易大赛排行榜</h2>
+    <div class="query-section">
+      <label for="rankingTime">排行统计时间</label>
+      <select id="rankingTime" name="rankingTime">
+        <option value="">2025-04-10</option>
+          <option value="template1">2025-04-09</option>
+		  <option value="template3">2025-04-08</option>
+		  <option value="template2">2025-04-07</option>
+		  <option value="template3">2025-04-06</option>
+      </select>
+      <label for="group">查询组别</label>
+      <select id="group" name="group">
+        <option value="">请选择</option>
+		<option value="">标准组</option>
+		<option value="">VIP组</option>
+        <!-- Add more options here -->
+      </select>
+      <label for="queryGroup">是否新手</label>
+      <select id="queryGroup" name="queryGroup">
+        <option value="">请选择</option>
+		<option value="">是</option>
+		<option value="">否</option>
+        <!-- Add more options here -->
+      </select>
+	<div>  
+      <button type="button" class="next-button" >查询</button>
+      <button type="button" class="next-button"  onclick="window.location.href='activity_trade_ranking_pending.html'">审核模式</button>
+      <button type="button" class="next-button">导出</button>
+    </div>
+	</div>
+    <table>
+      <thead>
+        <tr>
+          <th colspan="4">用户信息</th>
+          <th colspan="4">净值情况</th>
+          <th colspan="3">累计净值</th>
+          <th colspan="3">最大本金收益率</th>
+          <th colspan="3">最大回撤率</th>
+          <th colspan="3">交易手数</th>
+          <th colspan="2">综合得分</th>		  
+          <th colspan="3">审核信息</th>
+        </tr>
+        <tr>
+          <th>用戶ID</th>
+          <th>交易帳戶</th>
+          <th>組別</th>
+          <th>新手</th>
+          <th>期初净值</th>
+          <th>期间入金</th>
+          <th>期间出金</th>
+          <th>期末净值</th>
+          <th>累计净值</th>
+          <th>得分</th>
+          <th>排名</th>
+          <th>最大本金收益率</th>
+          <th>得分</th>
+          <th>排名</th>
+          <th>最大回撤率</th>
+          <th>得分</th>
+          <th>排名</th>
+          <th>交易手数</th>
+          <th>得分</th>
+          <th>排名</th>
+          <th>综合得分</th>
+		  <th>排名</th>
+          <th>审核排名</th>
+          <th>审核时间</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>123</td>
+          <td>1118</td>
+          <td>VIP</td>
+          <td>是</td>
+          <td>123.03</td>
+          <td>23.6</td>
+          <td>23.2</td>
+          <td>100</td>
+          <td>20</td>
+          <td>1</td>
+          <td>1</td>
+          <td>20</td>
+          <td>65.58</td>
+          <td>2</td>
+          <td>36.2%</td>
+          <td>63.98</td>
+          <td>2</td>
+          <td>12.3</td>
+          <td>69.5</td>
+          <td>1</td>
+          <td>95.6</td>
+          <td>1</td>
+          <td>1</td>
+          <td>2025-04-12</td>
+        </tr>
+        <tr>
+          <td>123</td>
+          <td>1118</td>
+          <td>VIP</td>
+          <td>是</td>
+          <td>123.03</td>
+          <td>23.6</td>
+          <td>23.2</td>
+          <td>100</td>
+          <td>20</td>
+          <td>1</td>
+          <td>1</td>
+          <td>20</td>
+          <td>65.58</td>
+          <td>2</td>
+          <td>36.2%</td>
+          <td>63.98</td>
+          <td>2</td>
+          <td>12.3</td>
+          <td>69.5</td>
+          <td>1</td>
+          <td>95.6</td>
+          <td>2</td>
+          <td>不参与</td>
+          <td>2025-04-12</td>
+        </tr>
+        <tr>
+          <td>123</td>
+          <td>1118</td>
+          <td>VIP</td>
+          <td>是</td>
+          <td>123.03</td>
+          <td>23.6</td>
+          <td>23.2</td>
+          <td>100</td>
+          <td>20</td>
+          <td>1</td>
+          <td>1</td>
+          <td>20</td>
+          <td>65.58</td>
+          <td>2</td>
+          <td>36.2%</td>
+          <td>63.98</td>
+          <td>2</td>
+          <td>12.3</td>
+          <td>69.5</td>
+          <td>1</td>
+          <td>95.6</td>
+          <td>2</td>
+          <td>2</td>
+          <td>2025-04-12</td>
+        </tr>
+        <tr>
+          <td>123</td>
+          <td>1118</td>
+          <td>VIP</td>
+          <td>是</td>
+          <td>123.03</td>
+          <td>23.6</td>
+          <td>23.2</td>
+          <td>100</td>
+          <td>20</td>
+          <td>1</td>
+          <td>1</td>
+          <td>20</td>
+          <td>65.58</td>
+          <td>2</td>
+          <td>36.2%</td>
+          <td>63.98</td>
+          <td>2</td>
+          <td>12.3</td>
+          <td>69.5</td>
+          <td>1</td>
+          <td>95.6</td>
+          <td>4</td>
+          <td>3</td>
+          <td>2025-04-12</td>
+        </tr>				
+      </tbody>
+    </table>
+	<div class="button-group">  
+      <button type="button" class="next-button" >上一页</button>
+      <button type="button" class="next-button" >下一页</button>
+    </div>	
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>活动维护</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* 确保内容从顶部开始 */
+    height: 100vh;
+    background-color: #f5f5f5;
+    overflow-y: auto; /* 允许垂直滚动 */
+  }
+  .container {
+    width: 80%;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: left; /* 字段名靠左显示 */
+    margin-top: 0; /* 确保容器顶部对齐 */
+  }
+  h2 {
+    margin-bottom: 20px;
+  }
+  .step-indicator {
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  .button-group {
+    display: flex;
+    justify-content: center; /* 按钮居中对齐 */
+    margin-top: 20px;
+  }
+  button {
+    padding: 10px 20px;
+    margin: 0 10px; /* 按钮之间增加间距 */
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  button:hover {
+    opacity: 0.8;
+  }
+  .next-button {
+    background-color: #007bff;
+    color: white;
+  }
+  .cancel-button {
+    background-color: #ff4500;
+    color: white;
+  }
+  .form-group {
+    margin-bottom: 20px;
+  }
+  label {
+    display: block;
+    margin-bottom: 5px;
+    text-align: left; /* 字段名靠左显示 */
+  }
+  input[type="file"] {
+    display: block;
+    margin-top: 5px;
+  }
+  textarea {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    resize: vertical;
+  }
+  .file-path {
+    margin-top: 5px;
+  }
+  .thumbnail {
+    max-width: 100px;
+    max-height: 100px;
+    margin-top: 5px;
+  }
+	.checkbox-group {
+		display: flex;
+		flex-wrap: wrap; /* 如果选项过多，可以换行 */
+		gap: 10px; /* 选项之间的间距 */
+   }  
+  .radio-group {
+	margin-right: 20px;
+  }   
+  .form-group {
+	display: flex;
+	flex-wrap: wrap;
+	margin-bottom: 20px;
+  }  
+</style>
+</head>
+<body>
+<div id="step1" class="container">
+   <h2>
+   <span> 步骤 1: 选择模板&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>  
+   <span style="color: red;">步骤 2: 填写通用活动参数&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>  
+   <span> 步骤 3: 填写活动特有参数</span>  
+   </h2>
+   
+    <div>
+    <label for="langSelect">添加支持语言</label>
+        <div class="checkbox-group" id="langSelect">
+            <label><input type="checkbox" name="fruit" value="apple" checked> 简体</label>
+            <label><input type="checkbox" name="fruit" value="banana" checked> 繁体</label>
+            <label><input type="checkbox" name="fruit" value="orange"> 英文</label>            
+			<label><input type="checkbox" name="fruit" value="orange"> 泰文</label>            
+        </div>
+	<div class="section">
+	  <label for="langSelect">默认语言</label>
+	  <div class="form-group">
+		<div class="radio-group">
+		  <input type="radio" id="postType1" name="postType" value="创作赢大奖">
+		  <label for="postType1">简体</label>
+		</div>
+		<div class="radio-group">
+		  <input type="radio" id="postType2" name="postType" value="许愿池" checked>
+		  <label for="postType2">繁体</label>
+		</div>
+		<div class="radio-group">
+		  <input type="radio" id="postType3" name="postType" value="聊天室">
+		  <label for="postType3">英文</label>
+		</div>
+		<div class="radio-group">
+		  <input type="radio" id="postType3" name="postType" value="聊天室">
+		  <label for="postType3">泰文</label>
+		</div>
+		<!-- Add more radio groups for other post types -->
+	  </div>
+	</div>
+	
+    <img src="img/mutl-lang.png" alt="Big Boat">
+	
+    <div class="button-group">
+      <button type="button" class="cancel-button" onclick="window.location.href='activity_add_mutillang.html'">上一步</button>
+      <button type="button" class="next-button" onclick="window.location.href='activity_index.html'">下一步</button>
+    </div>
+	
+</div>
+
+<script>
+  document.getElementById('shareImage').addEventListener('change', function(e) {
+    var file = e.target.files[0];
+    if (file) {
+      var reader = new FileReader();
+      reader.onload = function(e) {
+        document.getElementById('shareImageThumbnail').src = e.target.result;
+        document.getElementById('shareImagePath').textContent = file.name;
+      }
+      reader.readAsDataURL(file);
+    }
+  });
+  
+function handleSelectChange() {
+  var selectBox = document.getElementById("langSelect");
+  var selectedValue = selectBox.options[selectBox.selectedIndex].value;
+  window.location.href = selectedValue;
+}  
+</script>
+</body>
+</html>

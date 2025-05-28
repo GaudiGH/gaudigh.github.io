@@ -78,185 +78,104 @@
   <div class="menu-item">活動中心</div>
   <ul class="submenu">
     <li><button class="menu-item" onclick="window.location.href='model_index.html'">模板管理</button></li>
-     <li><button class="menu-item selected" onclick="window.location.href='activity_index.html'">活動管理</button></li>
+    <li><button class="menu-item selected" onclick="window.location.href='activity_index.html'">活動管理</button></li>
   </ul>
 </div>
 <div class="content">
   <div class="container">
-    <h2>交易大赛排行榜</h2>
+    <h2>交易大赛排行榜公布</h2>
     <div class="query-section">
-      <label for="rankingTime">排行统计时间</label>
+      <label for="rankingTime">用户ID</label>
+	  <input type="input" id="searchID" name="method" value="ID/交易账户/用户名称">
+
+      <label for="queryGroup">排行榜类型</label>
+		<select id="queryGroup" name="queryGroup" onchange="handleSelectChange()">
+		  <option value="">请选择</option>
+		  <option value="综合得分排名VIP组">综合得分排名VIP组</option>
+		  <option value="activity_trade_ranking_approved.html">综合得分排名标准组</option>
+		  <option value="新手组综合得分排名VIP组">新手组综合得分排名VIP组</option>
+		  <option value="新手组综合得分排名标准组">新手组综合得分排名标准组</option>
+		  <option value="新手组打榜名VIP组">新手组打榜名VIP组</option>
+		  <option value="新手组打榜标准组">新手组打榜标准组</option>
+		  <option value="特别大奖一VIP组">特别大奖一VIP组</option>
+		  <option value="特别大奖一标准组">特别大奖一标准组</option>
+		  <option value="特别大奖二VIP组">特别大奖二VIP组</option>
+		  <option value="特别大奖二标准组">特别大奖二标准组</option>
+		  <option value="activity_trade_ranking_fans.html">狂热粉丝</option>
+		</select>
+
+      <label for="rankingTime">审核状态</label>
       <select id="rankingTime" name="rankingTime">
-        <option value="">2025-04-10</option>
-          <option value="template1">2025-04-09</option>
-		  <option value="template3">2025-04-08</option>
-		  <option value="template2">2025-04-07</option>
-		  <option value="template3">2025-04-06</option>
-      </select>
-      <label for="group">查询组别</label>
-      <select id="group" name="group">
-        <option value="">请选择</option>
-		<option value="">标准组</option>
-		<option value="">VIP组</option>
-        <!-- Add more options here -->
-      </select>
-      <label for="queryGroup">是否新手</label>
-      <select id="queryGroup" name="queryGroup">
-        <option value="">请选择</option>
-		<option value="">是</option>
-		<option value="">否</option>
-        <!-- Add more options here -->
-      </select>
+        <option value="">请输入</option>
+		<option value="">已审核</option>
+		<option value="">未审核</option>
+      </select>		
 	<div>  
       <button type="button" class="next-button" >查询</button>
-      <button type="button" class="next-button"  onclick="window.location.href='activity_trade_ranking_pending.html'">审核模式</button>
       <button type="button" class="next-button">导出</button>
+	  <button type="button" class="next-button" onclick="showConfirm()">审核</button>
     </div>
 	</div>
     <table>
       <thead>
         <tr>
-          <th colspan="4">用户信息</th>
-          <th colspan="4">净值情况</th>
-          <th colspan="3">累计净值</th>
-          <th colspan="3">最大本金收益率</th>
-          <th colspan="3">最大回撤率</th>
-          <th colspan="3">交易手数</th>
-          <th colspan="2">综合得分</th>
-          <th colspan="2">审核信息</th>
-        </tr>
-        <tr>
-          <th>用戶ID</th>
-          <th>交易帳戶</th>
-          <th>組別</th>
+		  <th>序号ID</th>
+          <th>用户ID</th>
+		  <th>交易账户</th>
+          <th>用户名</th>
+          <th>排行榜类型</th>
+          <th>组别</th>
           <th>新手</th>
-          <th>期初净值</th>
-          <th>期间入金</th>
-          <th>期间出金</th>
-          <th>期末净值</th>
-          <th>累计净值</th>
-          <th>得分</th>
-          <th>排名</th>
-          <th>最大本金收益率</th>
-          <th>得分</th>
-          <th>排名</th>
-          <th>最大回撤率</th>
-          <th>得分</th>
-          <th>排名</th>
           <th>交易手数</th>
-          <th>得分</th>
-          <th>排名</th>
+          <th>单笔盈利</th>
           <th>综合得分</th>
-		  <th>排名</th>
-          <th>审核排名</th>
-          <th>审核时间</th>
+          <th>综合排名</th>
+		  <th>审核状态</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td>123</td>
-          <td>1118</td>
-          <td>VIP</td>
-          <td>是</td>
-          <td>123.03</td>
-          <td>23.6</td>
-          <td>23.2</td>
-          <td>100</td>
-          <td>20</td>
-          <td>1</td>
-          <td>1</td>
-          <td>20</td>
-          <td>65.58</td>
-          <td>2</td>
-          <td>36.2%</td>
-          <td>63.98</td>
-          <td>2</td>
-          <td>12.3</td>
-          <td>69.5</td>
-          <td>1</td>
-          <td>95.6</td>
-          <td>1</td>
-          <td></td>
-          <td></td>
+		   <td>1</td>
+          <td>123111</td>
+		  <td>854546511</td>
+          <td>狼小圆</td>
+          <td>综合得分排名VIP组</td>
+          <td>VIP组</td>
+          <td>否</td>
+		  <td>100</td>
+		  <td>10230</td>
+          <td> 99.5</td>
+		  <td> 1</td>
+		  <td> 未审核</td>
         </tr>
         <tr>
-          <td>123</td>
-          <td>1118</td>
-          <td>VIP</td>
-          <td>是</td>
-          <td>123.03</td>
-          <td>23.6</td>
-          <td>23.2</td>
-          <td>100</td>
-          <td>20</td>
-          <td>1</td>
-          <td>1</td>
-          <td>20</td>
-          <td>65.58</td>
-          <td>2</td>
-          <td>36.2%</td>
-          <td>63.98</td>
-          <td>2</td>
-          <td>12.3</td>
-          <td>69.5</td>
-          <td>1</td>
-          <td>95.6</td>
-          <td>2</td>
-          <td></td>
-          <td></td>
+		   <td>2</td>
+          <td>123222</td>
+		  <td>85454652</td>
+          <td>狼2圆</td>
+          <td>综合得分排名VIP组</td>
+          <td>VIP组</td>
+          <td>否</td>
+		  <td>100</td>
+		  <td>10230</td>
+          <td> 93.5</td>
+		  <td> 2</td>
+		  <td> 未审核</td>
         </tr>
         <tr>
-          <td>123</td>
-          <td>1118</td>
-          <td>VIP</td>
-          <td>是</td>
-          <td>123.03</td>
-          <td>23.6</td>
-          <td>23.2</td>
-          <td>100</td>
-          <td>20</td>
-          <td>1</td>
-          <td>1</td>
-          <td>20</td>
-          <td>65.58</td>
-          <td>2</td>
-          <td>36.2%</td>
-          <td>63.98</td>
-          <td>2</td>
-          <td>12.3</td>
-          <td>69.5</td>
-          <td>1</td>
-          <td>95.6</td>
-          <td>3</td>
-          <td></td>
-          <td></td>
+		   <td>3</td>
+          <td>123333</td>
+		  <td>854546513</td>
+          <td>狼3圆</td>
+          <td>综合得分排名VIP组</td>
+          <td>VIP组</td>
+          <td>否</td>
+		  <td>100</td>
+		  <td>10230</td>
+          <td> 89.5</td>
+		  <td> 3</td>
+		  <td> 未审核</td>
         </tr>
-        <tr>
-          <td>123</td>
-          <td>1118</td>
-          <td>VIP</td>
-          <td>是</td>
-          <td>123.03</td>
-          <td>23.6</td>
-          <td>23.2</td>
-          <td>100</td>
-          <td>20</td>
-          <td>1</td>
-          <td>1</td>
-          <td>20</td>
-          <td>65.58</td>
-          <td>2</td>
-          <td>36.2%</td>
-          <td>63.98</td>
-          <td>2</td>
-          <td>12.3</td>
-          <td>69.5</td>
-          <td>1</td>
-          <td>95.6</td>
-          <td>4</td>
-          <td></td>
-          <td></td>
-        </tr>		
       </tbody>
     </table>
 	<div class="button-group">  
@@ -267,3 +186,23 @@
 </div>
 </body>
 </html>
+
+<script>
+	function showConfirm() {
+		// 使用confirm方法弹出确认框
+		const result = confirm("你正在审核 综合得分排名VIP组 排行榜 ");
+		// 根据用户的选择执行不同的操作
+		if (result) {
+			window.location.href ="activity_trade_ranking_approved.html";
+		}
+	}
+	
+function handleSelectChange() {
+  var selectBox = document.getElementById("queryGroup");
+  var selectedValue = selectBox.options[selectBox.selectedIndex].value;
+  if (selectedValue.includes('html')) {
+	window.location.href = selectedValue;
+	}
+}  	
+	
+</script>

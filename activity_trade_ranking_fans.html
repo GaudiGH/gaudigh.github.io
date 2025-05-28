@@ -83,78 +83,75 @@
 </div>
 <div class="content">
   <div class="container">
-    <h2>交易大赛参与情况</h2>
+    <h2>交易大赛排行榜公布</h2>
     <div class="query-section">
-      <label for="searchID">用户</label>
+      <label for="rankingTime">用户ID</label>
 	  <input type="input" id="searchID" name="method" value="ID/交易账户/用户名称">
-      <label for="queryGroup">状态</label>
-      <select id="queryGroup" name="queryGroup">
-        <option value="">请选择</option>
-        <!-- Add more options here -->
-      </select>	  
+
+      <label for="queryGroup">排行榜类型</label>
+		<select id="queryGroup" name="queryGroup" onchange="handleSelectChange()">
+		  <option value="">请选择</option>
+		  <option value="activity_trade_ranking.html" >综合得分排名VIP组</option>
+		  <option value="综合得分排名标准组">综合得分排名标准组</option>
+		  <option value="新手组综合得分排名VIP组">新手组综合得分排名VIP组</option>
+		  <option value="新手组综合得分排名标准组">新手组综合得分排名标准组</option>
+		  <option value="新手组打榜名VIP组">新手组打榜名VIP组</option>
+		  <option value="新手组打榜标准组">新手组打榜标准组</option>
+		  <option value="特别大奖一VIP组">特别大奖一VIP组</option>
+		  <option value="特别大奖一标准组">特别大奖一标准组</option>
+		  <option value="特别大奖二VIP组">特别大奖二VIP组</option>
+		  <option value="特别大奖二标准组">特别大奖二标准组</option>
+		  <option value="activity_trade_ranking_fans.html">狂热粉丝</option>
+		</select>
+
+      <label for="rankingTime">审核状态</label>
+      <select id="rankingTime" name="rankingTime">
+        <option value="">请输入</option>
+		<option value="">已审核</option>
+		<option value="">未审核</option>
+      </select>		
 	<div>  
       <button type="button" class="next-button" >查询</button>
       <button type="button" class="next-button">导出</button>
+	  <button type="button" class="next-button" onclick="showConfirm()">审核</button>
     </div>
 	</div>
     <table>
       <thead>
         <tr>
-          <th>用戶ID</th>
+		  <th>序号ID</th>
+          <th>用户ID</th>
 		  <th>交易账户</th>
-          <th>用户昵称</th>
-          <th>状态</th>
-          <th>报名时间</th>
-		  <th>参与时间</th>
-		  <th>退赛时间</th>
-          <th>备注</th>
-          <th>操作</th>
+          <th>用户名</th>
+          <th>排行榜类型</th>
+		  <th>审核状态</th>
         </tr>
       </thead>
       <tbody>
         <tr>
+		   <td>1</td>
           <td>123111</td>
 		  <td>854546511</td>
           <td>狼小圆</td>
-          <td>报名成功</td>
-          <td>2025-04-01 12:10:10</td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td> <button type="button" class="next-button" >备注</button></td>
+          <td>狂热粉丝</td>
+		  <td> 未审核</td>
         </tr>
         <tr>
-          <td>123112</td>
-		  <td>854546512</td>
+		   <td>2</td>
+          <td>123222</td>
+		  <td>85454652</td>
           <td>狼2圆</td>
-          <td>验资不通过</td>
-          <td>2025-04-01 12:10:10</td>
-          <td></td>
-          <td></td>
-          <td></td>
-		  <td> <button type="button" class="next-button" >备注</button></td>        </tr>
+          <td>狂热粉丝</td>
+		  <td> 未审核</td>
+        </tr>
         <tr>
-          <td>123113</td>
+		   <td>3</td>
+          <td>123333</td>
 		  <td>854546513</td>
           <td>狼3圆</td>
-          <td>已参赛</td>
-          <td>2025-04-01 12:10:10</td>
-          <td>2025-05-01 12:10:10</td>
-          <td></td>
-          <td></td>
-          <td> <button type="button" class="next-button" >备注</button></td>
+          <td>狂热粉丝</td>
+		  <td> 未审核</td>
         </tr>
-        <tr>
-          <td>123114</td>
-		  <td>854546514</td>
-          <td>狼4圆</td>
-          <td>已退赛</td>
-          <td>2025-04-01 12:10:10</td>
-          <td>2025-05-01 12:10:10</td>
-          <td>2025-06-01 12:10:10</td>
-          <td></td>
-          <td> <button type="button" class="next-button" >备注</button></td>
-        </tr>		
       </tbody>
     </table>
 	<div class="button-group">  
@@ -165,3 +162,19 @@
 </div>
 </body>
 </html>
+
+<script>
+	function showConfirm() {
+		// 使用confirm方法弹出确认框
+		const result = confirm("你正在审核 狂热粉丝 排行榜 ");
+		// 根据用户的选择执行不同的操作
+	}
+	
+function handleSelectChange() {
+  var selectBox = document.getElementById("queryGroup");
+  var selectedValue = selectBox.options[selectBox.selectedIndex].value;
+  if (selectedValue.includes('html')) {
+	window.location.href = selectedValue;
+	}
+}  	
+</script>
